@@ -1,0 +1,33 @@
+@use "../utils/" as *;
+
+.verticalNavBar {
+  min-width: 117px;
+  height: calc(100vh - 91px); // header height 91px
+  background-color: $color__backgroundDark;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+
+  &__links {
+    display: grid;
+    gap: 20px;
+
+    &--icons {
+      width: 64px;
+      height: 64px;
+    }
+  }
+  &__copyright {
+    transform: rotate(-90deg);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+    width: 140px;
+    margin-bottom: 60px;
+    position: absolute;
+    bottom: 60px;
+  }
+}
