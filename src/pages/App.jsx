@@ -1,11 +1,4 @@
 import React from "react";
-import { useSearchParams } from "react-router-dom";
-
-import logo from "./assets/logo_sportsee.png";
-import iconYoga from "./assets/icons/icon_yoga.png";
-import iconSwimming from "./assets/icons/icon_swimming.png";
-import iconBike from "./assets/icons/icon_bike.png";
-import iconDumbbell from "./assets/icons/icon_dumbbell.png";
 
 export default function App() {
   return (
