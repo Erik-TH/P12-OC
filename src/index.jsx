@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./styles/index.scss";
 
 import Home from "./pages/Home";
+import UserDashboard from "./pages/UserDashboard";
 
 import Header from "./components/Header";
 import VerticalNavbar from "./components/VerticalNavbar";
@@ -18,6 +19,7 @@ root.render(
         <VerticalNavbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/:userswitch/:id" element={<UserDashboard />} />
         </Routes>
       </main>
     </Router>
