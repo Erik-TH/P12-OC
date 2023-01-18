@@ -1,6 +1,6 @@
 @use "../utils/" as *;
 
-.verticalNavBar {
+.verticalNavbar {
   min-width: 117px;
   height: calc(100vh - 91px); // header height 91px
   background-color: $color__backgroundDark;

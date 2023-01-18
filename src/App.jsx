@@ -9,43 +9,6 @@ import iconDumbbell from "./assets/icons/icon_dumbbell.png";
 
 export default function App() {
   return (
-    <div className="App">
-
-      <header className="header">
-
-        <img className="header__logo" src={logo} alt="SportSee's logo" />
-
-        <nav className="header__navBar">
-          <ul>
-            <li>Accueil</li>
-            <li>Profil</li>
-            <li>Réglage</li>
-            <li>Communauté</li>
-          </ul>
-        </nav>
-
-      </header>
-
-      <main>
-
-        <nav className="verticalNavBar">
-          <ul className="verticalNavBar__links">
-            <li>
-             <img className="verticalNavBar__links--icons" src={iconYoga} alt="yoga" />
-            </li>
-            <li>
-              <img className="verticalNavBar__links--icons" src={iconSwimming} alt="swimming" />
-            </li>
-            <li>
-              <img className="verticalNavBar__links--icons" src={iconBike} alt="bike" />
-            </li>
-            <li>
-              <img className="verticalNavBar__links--icons" src={iconDumbbell} alt="dumbbell" />
-            </li>
-          </ul>
-          <p className="verticalNavBar__copyright">Copyright, SportSee 2020</p>
-        </nav>
-
         <section className="dashboard">
 
           <h1 className="dashboard__welcomeTitle">
@@ -71,7 +34,5 @@ export default function App() {
           </div>
 
         </section>
-      </main>
-    </div>
   );
 }
