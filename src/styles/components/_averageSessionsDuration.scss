@@ -16,6 +16,24 @@
     opacity: 0.8;
     padding-right: 10px;
   }
+
+  &__overlay {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 200px;
+    background-color: #000000;
+    opacity: 0.2;
+  }
+
+  &__customTooltip {
+     background-color: white;
+     font-weight: 500;
+     font-size: 8px;
+     line-height: 24px;
+     color: black;
+     padding: 0 7px 0 7px;
+     position: relative;
+     margin-right: 10px;
+   }
 }
-
-

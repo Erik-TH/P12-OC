@@ -14,10 +14,10 @@ import { UserAverageSessionDatas } from "../models/UserAverageSessionDatas";
 
 export default function AverageSessionsDuration({ averageSessionsData }) {
   // const { sessions } = averageSessionsData;
-  const [tooltipX, setTooltipX] = useState(0);
 
   const AVERAGE_SESSIONS_CLASS = new UserAverageSessionDatas(averageSessionsData);
 
+  const [tooltipX, setTooltipX] = useState(0);
 
   const formatTick = (value) => {
     const ticks = {
@@ -32,38 +32,51 @@ export default function AverageSessionsDuration({ averageSessionsData }) {
     return ticks[value];
   };
 
+  const CustomTooltip = ({ active, payload, coordinate }) => {
+    if (active && payload && payload.length) {
+      if (payload[0].payload.tickDisplay === false) return null;
+      setTimeout(() => setTooltipX(coordinate.x), 0);
+      return <div className="averageSessionsDuration__customTooltip">{`${payload[0].value} min`}</div>;
+    }
+    return null;
+  };
 
+  const drawOverlay = (state) => {
+    if (state.isTooltipActive) {
+      const overlay = document.querySelector(".averageSessionsDuration__overlay");
+      const container = document.querySelector(".averageSessionsDuration");
+      const containerWidth = container.clientWidth;
+      const calculatedWidth = containerWidth - tooltipX;
+      overlay.style.width = calculatedWidth + "px";
+    } else {
+      deleteOverlay();
+    }
+  };
+
+  const deleteOverlay = () => {
+    const overlay = document.querySelector(".averageSessionsDuration__overlay");
+    overlay.style.width = "0px";
+  };
 
   return (
     <article className="statsCard statsCards__item averageSessionsDuration">
       <div className="averageSessionsDuration__overlay"></div>
-      <h3 className="averageSessionsDuration__title">Durée moyenne des sessions</h3>
+      <h3 className="averageSessionsDuration__title">
+        Durée moyenne des sessions
+      </h3>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           data={AVERAGE_SESSIONS_CLASS._averageSessions}
-          margin={{ left: -20, right: -20, top: 100, bottom: 15 }}
-
+          margin={{ left: 10, right: 10, top: 100, bottom: 15 }}
+          onMouseMove={drawOverlay}
+          onMouseLeave={deleteOverlay}
         >
           <Tooltip
-            filterNull={false}
-            separator=""
-            itemStyle={{
-              color: "#000000",
-              backgroundColor: "#ffffff",
-              fontSize: "10px",
-              padding: "rem",
-              margin: 3,
-              border: 0,
-            }}
-            formatter={(name, value) => [name, ""]}
-            contentStyle={{
-              padding: ".4rem",
-              backgroundColor: "#ffffff",
-              border: 0,
-            }}
-            labelStyle={{
-              display: "none",
-            }}
+            content={<CustomTooltip />}
+            cursor={false}
+            wrapperStyle={{ outline: "none" }}
+            animationDuration={0}
+            margin={{ right: -100 }}
           />
           <Line
             type="natural"
@@ -99,5 +112,3 @@ AverageSessionsDuration.prototype = {
     ),
   }).isRequired,
 };
-
-
