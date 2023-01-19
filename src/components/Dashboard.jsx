@@ -3,8 +3,9 @@ import { useParams } from "react-router-dom";
 
 import { getUserDatas, getUserActivityDatas, getUserAverageSessionsDatas, getUserPerformanceDatas } from "../services/getDatas";
 
-import DailyActivity from "../components/DailyActivity"
+import DailyActivity from "./DailyActivity"
 import AverageSessionsDuration from "./AverageSessionsDuration";
+import Performance from "./Performance";
 
 import { UserDatas } from "../models/UserDatas";
 
@@ -17,6 +18,7 @@ export default function Dashboard() {
 
   const [getUserActivityById, setgetUserActivityById] = useState({});
   const [getUserAverageSessionById, setgetUserAverageSessionById] = useState({});
+  const [getUserPerformanceById, setgetUserPerformanceById] = useState({});
 
   const [isLoading, setIsLoading] = useState(true);
 
@@ -25,10 +27,12 @@ export default function Dashboard() {
       const USER = await getUserDatas(id, userswitch);
       const ACTIVITY = await getUserActivityDatas(id, userswitch);
       const AVERAGE_SESSIONS = await getUserAverageSessionsDatas(id, userswitch);
+      const PERFORMANCE = await getUserPerformanceDatas(id, userswitch);
 
       setgetUserById(USER);
       setgetUserActivityById(ACTIVITY);
       setgetUserAverageSessionById(AVERAGE_SESSIONS);
+      setgetUserPerformanceById(PERFORMANCE);
 
       setIsLoading(false);
     };
@@ -64,7 +68,8 @@ export default function Dashboard() {
                 <DailyActivity userActivityData={getUserActivityById} />
                 <AverageSessionsDuration averageSessionsData={getUserAverageSessionById} />
                 {/* <article className="statsCards__item averageTimeSession"></article> */}
-                <article className="statsCards__item performance"></article>
+                <Performance performanceDatas={getUserPerformanceById} />
+                {/* <article className="statsCards__item performance"></article> */}
                 <article className="statsCards__item score"></article>
               </div>
 
