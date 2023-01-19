@@ -76,7 +76,7 @@ export default async function getDatas(id, userswitch, uri) {
                 )
                 return MOCKED_USER_ACTIVITY
 
-            case "average-session":
+            case "average-sessions":
                 const MOCKED_USER_AVERAGE_SESSIONS = MOCKED_DATA.USER_AVERAGE_SESSIONS.find(
                     (user) => user.userId === parseInt(id)
                 )
