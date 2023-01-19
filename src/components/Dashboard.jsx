@@ -35,31 +35,31 @@ export default function Dashboard() {
       ) : (
         <>
           <section className="dashboard">
-            <h1 className="dashboard__welcomeTitle">
+            <h2 className="dashboard__welcomeTitle">
               Bonjour{" "}
               <span className="dashboard__welcomeTitle--userFirstname">
               {USER_CLASS.firstName}
               </span>
-            </h1>
+            </h2>
 
             <p className="dashboard__message">
               Félicitation ! Vous avez explosé vos objectifs hier
             </p>
 
-            <div className="stats">
-              <div className="statsLeftColumn">
-                <article className="statsCard dailyActivity"></article>
-                <article className="statsCard averageTimeSession"></article>
-                <article className="statsCard performance"></article>
-                <article className="statsCard score"></article>
+            <div className="dashboard__stats">
+              <div className="statsCards">
+                <article className="statsCards__item dailyActivity"></article>
+                <article className="statsCards__item averageTimeSession"></article>
+                <article className="statsCards__item performance"></article>
+                <article className="statsCards__item score"></article>
               </div>
 
-              <div className="statsRightColumn">
-                <article className="statsCard statsCardRight"></article>
-                <article className="statsCard statsCardRight"></article>
-                <article className="statsCard statsCardRight"></article>
-                <article className="statsCard statsCardRight"></article>
-              </div>
+              <aside className="statsSummary">
+                <article className="statsSummary__item calories"></article>
+                <article className="statsSummary__item proteines"></article>
+                <article className="statsSummary__item glucides"></article>
+                <article className="statsSummary__item lipides"></article>
+              </aside>
             </div>
           </section>
         </>
