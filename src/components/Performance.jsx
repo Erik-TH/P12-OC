@@ -17,6 +17,18 @@ const Performance = ({ performanceDatas }) => {
   performanceDatas.data.reverse()
   const PERFORMANCE_CLASS = new UserPerformanceDatas(performanceDatas);
 
+  const formatTick = (value) => {
+    const translateFr = {
+      cardio: "Cardio",
+      energy: "Energie",
+      endurance: "Endurance",
+      strength: "Force",
+      speed: "Vitesse",
+      intensity: "Intensité",
+    };
+    return translateFr[value];
+  };
+
   return (
     <article className="statsCard statsCards__item performance">
       <ResponsiveContainer width="100%" height="100%">
@@ -32,6 +44,7 @@ const Performance = ({ performanceDatas }) => {
           tick={{ fill: "#ffffff", fontSize: 10 }}
           axisLine={true}
           tickLine={true}
+          tickFormatter={formatTick}
         />
 
         <PolarRadiusAxis
