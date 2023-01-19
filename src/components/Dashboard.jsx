@@ -7,6 +7,12 @@ import DailyActivity from "./DailyActivity"
 import AverageSessionsDuration from "./AverageSessionsDuration";
 import Performance from "./Performance";
 import Score from "./Score";
+import CardNutrition from "./CardNutrition";
+
+import caloriesIcon from "../assets/icons/icon_calories.png";
+import proteinesIcon from "../assets/icons/icon_proteines.png";
+import glucidesIcon from "../assets/icons/icon_glucides.png";
+import fatIcon from "../assets/icons/icon_fat.png";
 
 import { UserDatas } from "../models/UserDatas";
 
@@ -83,10 +89,32 @@ export default function Dashboard() {
               </div>
 
               <aside className="statsSummary">
-                <article className="statsSummary__item calories"></article>
+
+                <CardNutrition 
+                  type="calories"
+                  value={USER_CLASS.calorie}
+                  icon={caloriesIcon}
+                />
+                <CardNutrition 
+                  type="proteines"
+                  value={USER_CLASS.protein}
+                  icon={proteinesIcon}
+                />
+                <CardNutrition 
+                  type="glucides"
+                  value={USER_CLASS.carbohydrate}
+                  icon={glucidesIcon}
+                />
+                <CardNutrition 
+                  type="lipides"
+                  value={USER_CLASS.lipid}
+                  icon={fatIcon}
+                />
+
+                {/* <article className="statsSummary__item calories"></article>
                 <article className="statsSummary__item proteines"></article>
                 <article className="statsSummary__item glucides"></article>
-                <article className="statsSummary__item lipides"></article>
+                <article className="statsSummary__item lipides"></article> */}
               </aside>
             </div>
           </section>
