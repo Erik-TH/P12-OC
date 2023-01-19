@@ -3,20 +3,27 @@ import { useParams } from "react-router-dom";
 
 import { getUserDatas, getUserActivityDatas, getUserAverageSessionsDatas, getUserPerformanceDatas } from "../services/getDatas";
 
+import DailyActivity from "../components/DailyActivity"
+
 import { UserDatas } from "../models/UserDatas";
+
 
 export default function Dashboard() {
   let { id } = useParams();
   let { userswitch } = useParams();
   const token = localStorage.getItem("accessToken");
   const [getUserById, setgetUserById] = useState({});
+  const [getUserActivityById, setgetUserActivityById] = useState({});
+  
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetch = async (id, userswitch) => {
       const USER = await getUserDatas(id, userswitch);
+      const ACTIVITY = await getUserActivityDatas(id, userswitch);
 
       setgetUserById(USER);
+      setgetUserActivityById(ACTIVITY);
       setIsLoading(false);
     };
     fetch(id, userswitch);
@@ -48,7 +55,7 @@ export default function Dashboard() {
 
             <div className="dashboard__stats">
               <div className="statsCards">
-                <article className="statsCards__item dailyActivity"></article>
+                <DailyActivity userActivityData={getUserActivityById} />
                 <article className="statsCards__item averageTimeSession"></article>
                 <article className="statsCards__item performance"></article>
                 <article className="statsCards__item score"></article>

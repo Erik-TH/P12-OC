@@ -54,14 +54,14 @@ export default async function getDatas(id, userswitch, uri) {
     if (userswitch === "user") {
         try {
             const response = await axios.get(
-                `http:localhost:3000/${userswitch}/${id}/${uri}`
+                `http://localhost:3000/${userswitch}/${id}/${uri}`
                 )
                 // console.log(response.data.data);
                 return response.data.data
         } catch (error) {
             console.error(error)
         }
-    } else if(userswitch === "mocked") {
+    } else if (userswitch === "mocked") {
         // console.log(USER_DATA.USER_MAIN_DATA);
         switch (uri) {
             case "":
@@ -72,19 +72,19 @@ export default async function getDatas(id, userswitch, uri) {
 
             case "activity":
                 const MOCKED_USER_ACTIVITY = MOCKED_DATA.USER_ACTIVITY.find(
-                    (user) => user.id === parseInt(id)
+                    (user) => user.userId === parseInt(id)
                 )
                 return MOCKED_USER_ACTIVITY
 
             case "average-session":
                 const MOCKED_USER_AVERAGE_SESSIONS = MOCKED_DATA.USER_AVERAGE_SESSIONS.find(
-                    (user) => user.id === parseInt(id)
+                    (user) => user.userId === parseInt(id)
                 )
                 return MOCKED_USER_AVERAGE_SESSIONS
 
             case "performance":
                 const MOCKED_USER_PERFORMANCE = MOCKED_DATA.USER_PERFORMANCE.find(
-                    (user) => user.id === parseInt(id)
+                    (user) => user.userId === parseInt(id)
                 )
                 return MOCKED_USER_PERFORMANCE
 

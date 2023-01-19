@@ -22,4 +22,11 @@
     font-size: 18px;
     line-height: 24px;
   }
+
+  &__stats {
+    margin-top: min(75px, 4%);
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+  }
 }
