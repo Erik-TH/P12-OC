@@ -1,0 +1,21 @@
+.averageSessionsDuration {
+  max-height: 263px;
+  min-height: 200px;
+  background: #ff0000;
+  position: relative;
+  overflow: hidden;
+
+  &__title {
+    position: absolute;
+    top: 29px;
+    left: 34px;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 24px;
+    color: #ffffff;
+    opacity: 0.8;
+    padding-right: 10px;
+  }
+}
+
+

@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { getUserDatas, getUserActivityDatas, getUserAverageSessionsDatas, getUserPerformanceDatas } from "../services/getDatas";
 
 import DailyActivity from "../components/DailyActivity"
+import AverageSessionsDuration from "./AverageSessionsDuration";
 
 import { UserDatas } from "../models/UserDatas";
 
@@ -13,17 +14,22 @@ export default function Dashboard() {
   let { userswitch } = useParams();
   const token = localStorage.getItem("accessToken");
   const [getUserById, setgetUserById] = useState({});
+
   const [getUserActivityById, setgetUserActivityById] = useState({});
-  
+  const [getUserAverageSessionById, setgetUserAverageSessionById] = useState({});
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetch = async (id, userswitch) => {
       const USER = await getUserDatas(id, userswitch);
       const ACTIVITY = await getUserActivityDatas(id, userswitch);
+      const AVERAGE_SESSIONS = await getUserAverageSessionsDatas(id, userswitch);
 
       setgetUserById(USER);
       setgetUserActivityById(ACTIVITY);
+      setgetUserAverageSessionById(AVERAGE_SESSIONS);
+
       setIsLoading(false);
     };
     fetch(id, userswitch);
@@ -56,7 +62,8 @@ export default function Dashboard() {
             <div className="dashboard__stats">
               <div className="statsCards">
                 <DailyActivity userActivityData={getUserActivityById} />
-                <article className="statsCards__item averageTimeSession"></article>
+                <AverageSessionsDuration averageSessionsData={getUserAverageSessionById} />
+                {/* <article className="statsCards__item averageTimeSession"></article> */}
                 <article className="statsCards__item performance"></article>
                 <article className="statsCards__item score"></article>
               </div>
