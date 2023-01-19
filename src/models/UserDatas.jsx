@@ -32,6 +32,16 @@ export class UserDatas {
     return this._score;
   }
 
+  get arrayOfPercentScore() {
+    return this.calculateScore();
+  }
+
+  calculateScore() {
+    return [
+      { name: "score", value: this.score * 100 },
+      { name: "total", value: 100 - this.score * 100 },
+    ];
+  }
 
   get calorie() {
     return this._calorie;

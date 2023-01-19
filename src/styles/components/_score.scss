@@ -1,0 +1,53 @@
+.score {
+  max-height: 263px;
+  min-height: 200px;
+  position: relative;
+
+  &__title {
+      position: absolute;
+      top: 20px;
+      left: 25px;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 24px;
+      z-index: 2;
+  }
+
+  &__value {
+      background-color: white;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      position: absolute;
+      top: calc(20px + 50%);
+      transform: translateY(-50%) translateX(-50%);
+      left: 50%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+
+      &--number {
+          color: black;
+          font-weight: 700;
+          font-size: 26px;
+          line-height: 26px;
+        }
+        
+        &--text {
+          color: #74798c;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 26px;
+      }
+  }
+
+  & .recharts-responsive-container {
+    margin-top: 40px;
+  }
+}
+
+
+

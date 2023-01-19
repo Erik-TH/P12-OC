@@ -6,6 +6,7 @@ import { getUserDatas, getUserActivityDatas, getUserAverageSessionsDatas, getUse
 import DailyActivity from "./DailyActivity"
 import AverageSessionsDuration from "./AverageSessionsDuration";
 import Performance from "./Performance";
+import Score from "./Score";
 
 import { UserDatas } from "../models/UserDatas";
 
@@ -42,6 +43,13 @@ export default function Dashboard() {
   const USER_CLASS = !isLoading
     ? new UserDatas(
         getUserById?.userInfos.firstName,
+        getUserById?.userInfos.lastName,
+        getUserById?.userInfos.age,
+        getUserById?.score ? getUserById.score : getUserById.todayScore,
+        getUserById?.keyData.calorieCount,
+        getUserById?.keyData.proteinCount,
+        getUserById?.keyData.carbohydrateCount,
+        getUserById?.keyData.lipidCount
       )
     : "";
 
@@ -70,7 +78,8 @@ export default function Dashboard() {
                 {/* <article className="statsCards__item averageTimeSession"></article> */}
                 <Performance performanceDatas={getUserPerformanceById} />
                 {/* <article className="statsCards__item performance"></article> */}
-                <article className="statsCards__item score"></article>
+                <Score userScoreDatas={USER_CLASS.arrayOfPercentScore} />
+                {/* <article className="statsCards__item score"></article> */}
               </div>
 
               <aside className="statsSummary">
