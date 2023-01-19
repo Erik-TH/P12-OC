@@ -20,7 +20,7 @@ export default function DailyActivity({ userActivityData }) {
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="customTooltip">
+        <div className="dailyActivity__customTooltip">
           <div>{`${payload[0].value}kg`}</div>
           <div>{`${payload[1].value}kCal`}</div>
         </div>
@@ -36,7 +36,7 @@ export default function DailyActivity({ userActivityData }) {
 
   return (
     <article className="statsCards__item dailyActivity">
-      <h3>Activité quotidienne</h3>
+      <h3 className="dailyActivity__title">Activité quotidienne</h3>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           data={sessions}
