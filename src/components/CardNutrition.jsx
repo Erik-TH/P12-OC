@@ -11,7 +11,7 @@ import PropTypes from "prop-types";
 export default function CardNutrition({ type, value, icon }) {
   const unit = type === "calories" ? "kCal" : "g";
   return (
-    <article className={`statsSummary__item ${type}`}>
+    <article className={`statsCards__item statsSummary__item ${type}`}>
       <div className="statsSummary__item--icon">
         <img src={icon} alt={type} />
       </div>

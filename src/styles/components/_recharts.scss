@@ -1,3 +1,11 @@
 .recharts-legend-item > span {
   color: #74798c !important;
 }
+
+.recharts-legend-item:first-child {
+  margin-right: 32px !important;
+}
+
+.recharts-legend-item > svg {
+  margin-right: 12px !important;
+}
