@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 export default function Score({ userScoreDatas }) {
   const COLORS = ["red", "transparent"];
   return (
-    <article className="statsCards__item score">
+    <article className="statsCards__item darkBackground score">
       <h3 className="score__title">Score</h3>
       <div className="score__value">
         <div className="score__value--number">{userScoreDatas[0].value}%</div>

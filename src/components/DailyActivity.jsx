@@ -35,7 +35,7 @@ export default function DailyActivity({ userActivityData }) {
   };
 
   return (
-    <article className="statsCards__item dailyActivity">
+    <article className="statsCards__item darkBackground dailyActivity">
       <h3 className="dailyActivity__title">Activité quotidienne</h3>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
