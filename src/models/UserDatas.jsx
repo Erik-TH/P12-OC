@@ -1,4 +1,20 @@
+/**
+ * Represents the datas of an app User
+ *
+ */
 export class UserDatas {
+  /**
+   *
+   * @param {string} firstName user's firstname
+   * @param {string} lastName user's lastname
+   * @param {number} age user's age
+   * @param {number} score user's score
+   * @param {number} calorie user's calorie count
+   * @param {number} protein user's protein count
+   * @param {number} carbohydrate user's carbohydrate count
+   * @param {number} lipid user's lipid count
+   */
+
   constructor(
     firstName,
     lastName,
@@ -36,6 +52,11 @@ export class UserDatas {
     return this.calculateScore();
   }
 
+  /**
+   * Used to calculate the user's score in percentqge from its score data
+   * @property {function} calculateScore calculate and print the score in percentage
+   * @returns {(number|array)}
+   */
   calculateScore() {
     return [
       { name: "score", value: this.score * 100 },
