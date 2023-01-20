@@ -59,7 +59,7 @@ export default function AverageSessionsDuration({ averageSessionsData }) {
   };
 
   return (
-    <article className="statsCard statsCards__item averageSessionsDuration">
+    <article className="statsCards__item averageSessionsDuration">
       <div className="averageSessionsDuration__overlay"></div>
       <h3 className="averageSessionsDuration__title">
         Durée moyenne des sessions

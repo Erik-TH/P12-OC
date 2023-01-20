@@ -30,7 +30,7 @@ const Performance = ({ performanceDatas }) => {
   };
 
   return (
-    <article className="statsCard statsCards__item performance">
+    <article className="statsCards__item performance">
       <ResponsiveContainer width="100%" height="100%">
       <RadarChart
         outerRadius={65}

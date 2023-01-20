@@ -15,12 +15,12 @@ export default function CardNutrition({ type, value, icon }) {
       <div className="statsSummary__item--icon">
         <img src={icon} alt={type} />
       </div>
-      <div className="statsCard__infos">
-        <p>
+      <div className="statsSummary__infos">
+        <p className="statsSummary__infos--value">
           {value}
           {unit}
         </p>
-        <p>{type}</p>
+        <p className="statsSummary__infos--type">{type}</p>
       </div>
     </article>
   );
