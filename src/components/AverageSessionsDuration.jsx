@@ -12,6 +12,11 @@ import { useState } from "react";
 
 import { UserAverageSessionDatas } from "../models/UserAverageSessionDatas";
 
+/**
+ * Component of the user's average session duration
+ * @param {object} averageSessionsData The object of datas
+ * @returns {ReactComponentElement} The datas in a charts
+ */
 export default function AverageSessionsDuration({ averageSessionsData }) {
   // const { sessions } = averageSessionsData;
 
@@ -19,6 +24,11 @@ export default function AverageSessionsDuration({ averageSessionsData }) {
 
   const [tooltipX, setTooltipX] = useState(0);
 
+  /**
+   * Format tick from index to the first day's letter
+   * @param {number} value 
+   * @returns {string} The formated tick
+   */
   const formatTick = (value) => {
     const ticks = {
       1: "L",
@@ -32,6 +42,12 @@ export default function AverageSessionsDuration({ averageSessionsData }) {
     return ticks[value];
   };
 
+  /**
+   * Customize the tooltip
+   * @param {boolean} active The state of the tooltip
+   * @param {object} payload Value of the tooltip
+   * @returns The customized tooltip
+   */
   const CustomTooltip = ({ active, payload, coordinate }) => {
     if (active && payload && payload.length) {
       if (payload[0].payload.tickDisplay === false) return null;
@@ -41,6 +57,10 @@ export default function AverageSessionsDuration({ averageSessionsData }) {
     return null;
   };
 
+  /**
+   * Add and remove the overlay onMouse
+   * @param {object} state object onMouse
+   */
   const drawOverlay = (state) => {
     if (state.isTooltipActive) {
       const overlay = document.querySelector(".averageSessionsDuration__overlay");

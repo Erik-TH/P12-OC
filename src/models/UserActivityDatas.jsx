@@ -9,6 +9,10 @@ export class UserActivityDatas {
     });
   }
 
+  /**
+   * select the day of this month for activityDatas
+   * @returns { number } The day - the number between 1-31
+   */
   selectDate = (date) => {
     const day = new Date(date);
     return day.getDate().toString();

@@ -1,6 +1,11 @@
 import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 import PropTypes from "prop-types";
 
+/**
+ * Component of the user's score in a pie chart
+ * @param {object} userScoreDatas 
+ * @returns {ReactComponentElement} Score component
+ */
 export default function Score({ userScoreDatas }) {
   const COLORS = ["red", "transparent"];
   return (

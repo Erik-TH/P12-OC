@@ -12,11 +12,20 @@ import {
 
 import UserPerformanceDatas from "../models/UserPerformanceDatas"
 
-
+/**
+ * Component for the user's performances
+ * @param {object} performanceDatas The object of datas
+ * @returns {ReactComponentElement} Performances displayed in a radar chart
+ */
 const Performance = ({ performanceDatas }) => {
   performanceDatas.data.reverse()
   const PERFORMANCE_CLASS = new UserPerformanceDatas(performanceDatas);
 
+  /**
+   * Format the tick from index to a translated kind in french
+   * @param {number} value kind
+   * @returns {string} translated kind
+   */
   const formatTick = (value) => {
     const translateFr = {
       cardio: "Cardio",

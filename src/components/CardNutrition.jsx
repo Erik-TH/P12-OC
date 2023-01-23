@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 
 /**
- * React component for Nutritional card.
- * @param {string} type The type of CardUserData, one of ["calories", "proteines", "glucides", "lipides"]
+ * Component for the Nutritional card.
+ * @param {string} type The type of CardNutrition, one of ["calories", "proteines", "glucides", "lipides"]
  * @param {number} value The quantity of nutritional data
  * @param {string} icon Link of the icon
  * @returns {ReactComponentElement} Component stat displayed aside on the right column of the dashboard

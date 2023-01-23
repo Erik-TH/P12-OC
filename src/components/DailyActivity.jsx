@@ -13,10 +13,21 @@ import PropTypes from "prop-types";
 
 import useWindowDimensions from "../hooks/WindowDImensions";
 
+/**
+ * Component for the user's daily activity
+ * @param {object} userActivityData The object of datas
+ * @returns {ReactComponentElement} Daily Activity charts
+ */
 export default function DailyActivity({ userActivityData }) {
   const { sessions } = userActivityData;
   const { width } = useWindowDimensions();
 
+  /**
+   * Customize the tooltip
+   * @param {boolean} active The state of the tooltip
+   * @param {object} payload Value of the tooltip
+   * @returns {DOMElement} The customized Tooltip
+   */
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
@@ -29,6 +40,10 @@ export default function DailyActivity({ userActivityData }) {
     return null;
   };
 
+  /**
+   * Calculate Xaxis's padding
+   * @returns {number} Padding for Xaxis
+   */
   const getXaxisPadding = () => {
     if (width < 1200) return -24;
     return -80;
