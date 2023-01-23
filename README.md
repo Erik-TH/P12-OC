@@ -33,3 +33,5 @@ Datas are fetched from an external NodeJS server.
 
 - The `npm install` command will allow you to install the dependencies.
 - The `npm start` command will allow you to run the project.
+
+- The .env file contain REACT_APP_BACKEND_URL to change the URL to the BACKEND API.
