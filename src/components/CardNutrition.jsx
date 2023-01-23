@@ -2,11 +2,10 @@ import PropTypes from "prop-types";
 
 /**
  * React component for Nutritional card.
- *
  * @param {string} type The type of CardUserData, one of ["calories", "proteines", "glucides", "lipides"]
- * @param {number} quantity The quantity of nutritional data
- * @param {string} icon Link or data about the icon
- * @returns {ReactComponentElement} A react component
+ * @param {number} value The quantity of nutritional data
+ * @param {string} icon Link of the icon
+ * @returns {ReactComponentElement} Component stat displayed aside on the right column of the dashboard
  */
 export default function CardNutrition({ type, value, icon }) {
   const unit = type === "calories" ? "kCal" : "g";
