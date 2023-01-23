@@ -12,7 +12,7 @@ export default async function getDatas(id, userswitch, uri) {
     if (userswitch === "user") {
         try {
             const response = await axios.get(
-                `http://localhost:3000/${userswitch}/${id}/${uri}`
+                process.env.REACT_APP_BACKEND_URL + `/${userswitch}/${id}/${uri}`
                 )
                 // console.log(response.data.data);
                 return response.data.data
