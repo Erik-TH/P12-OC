@@ -29,7 +29,10 @@ Datas are fetched from an external NodeJS server.
 - [NodeJS (**version 16.18**)](https://nodejs.org/en/)
 - [npm (version 9.1)](https://www.npmjs.com/)
 
-### 2.2 Launching the project
+### 2.2 Recommended editor
+- [Visual Studio](https://www.visualstudio.com/)
+
+### 2.3 Launching the project
 
 - The `npm install` command will allow you to install the dependencies.
 - The `npm start` command will allow you to run the project.
