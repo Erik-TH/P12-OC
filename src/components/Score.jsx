@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 /**
  * Component of the user's score in a pie chart
- * @param {object} userScoreDatas 
+ * @param {Array} userScoreDatas User's score - from array calculateScore
  * @returns {ReactComponentElement} Score component
  */
 export default function Score({ userScoreDatas }) {

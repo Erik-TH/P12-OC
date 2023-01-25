@@ -60,7 +60,7 @@ export class UserDatas {
   calculateScore() {
     return [
       { name: "score", value: this.score * 100 },
-      { name: "total", value: 100 - this.score * 100 },
+      { name: "total", value: 100 - this.score * 100 }, //second part of the PieChart - in transparent
     ];
   }
 
