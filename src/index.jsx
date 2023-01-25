@@ -4,6 +4,7 @@ import "./styles/index.scss";
 
 import Home from "./pages/Home";
 import UserDashboard from "./pages/UserDashboard";
+import ErrorAPI from "./pages/ErrorAPI";
 
 import Header from "./components/Header";
 import VerticalNavbar from "./components/VerticalNavbar";
@@ -20,6 +21,7 @@ root.render(
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:userswitch/:id" element={<UserDashboard />} />
+          <Route path="/errorAPI" element={<ErrorAPI />} />
         </Routes>
       </main>
     </Router>

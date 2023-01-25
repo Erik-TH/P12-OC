@@ -18,6 +18,12 @@ export default async function getDatas(id, userswitch, uri) {
                 return response.data.data
         } catch (error) {
             console.error(error)
+            
+            if (error.request) {
+                // Request made but no response is received from the server.
+                // console.log(error.request);
+                window.location.replace("/errorAPI")
+            }
         }
     } else if (userswitch === "mocked") {
         // console.log(USER_DATA.USER_MAIN_DATA);
